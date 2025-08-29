@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    margin: 40px auto;
+    width: 70%;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.imgCon img {
+    width: 290px;
+    height: 384px;
+}
+
+.paraCon {
+    padding: 8px;
+}
+
+.paraCon h1 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: white;
+}
+
+.paraCon h4 {
+    font-size: 22px;
+    color: rgb(209, 55, 28);
+    margin: 10px 0;
+}
+
+.paraCon p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: rgb(0, 0, 156);
+}
+
+.paraCon h5 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: rgb(2, 225, 255);
+}
+
+.paraCon button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #425371;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.paraCon button:hover {
+    background: #2e3a4e;
+}
