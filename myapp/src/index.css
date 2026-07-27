@@ -5,6 +5,7 @@
 }
 
 body {
-  background-color: #8387C2;
-  font-family: 'Roboto', sans-serif;
+  background-color: #8387c2;
+  font-family: "Roboto", sans-serif;
+  min-width: 320px;
 }

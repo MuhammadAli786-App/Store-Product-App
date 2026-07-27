@@ -10,12 +10,11 @@ function ProductDetail() {
 
   useEffect(() => {
     fetchSingleProductData();
-  }),
-    [params.id];
+  }, [params.id]);
   const fetchSingleProductData = async () => {
     try {
       const res = await axios.get(
-        `https://fakestoreapi.com/products/${params.id}`
+        `https://fakestoreapi.com/products/${params.id}`,
       );
       console.log(res.data);
       setSingleProduct(res.data);
@@ -32,7 +31,7 @@ function ProductDetail() {
       ) : (
         <div className={styles.container}>
           <div className={styles.imgCon}>
-            <img src={singleProduct.image} alt="No Product Available" />
+            <img src={singleProduct.image} alt={singleProduct.title} />{" "}
           </div>
           <div className={styles.paraCon}>
             <h1>{singleProduct.title}</h1>
