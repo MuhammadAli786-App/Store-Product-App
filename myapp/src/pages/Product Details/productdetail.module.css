@@ -1,80 +1,133 @@
+.page {
+  min-height: 100vh;
+}
+
 .container {
-  display: flex;
-  margin: 40px auto;
-  width: 90%;
-  max-width: 1100px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
   align-items: center;
-  gap: 50px;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem) 4rem;
 }
 
 .imgCon {
-  flex: 1;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+  padding: 2rem;
+  border-radius: 30px;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.25);
 }
 
 .imgCon img {
-  width: 100%;
-  max-width: 290px;
-  height: 384px;
+  max-width: 100%;
+  max-height: 440px;
   object-fit: contain;
+  filter: drop-shadow(0 18px 32px rgba(15, 23, 42, 0.18));
 }
 
 .paraCon {
-  flex: 1;
-  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.38);
+  color: #bfdbfe;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .paraCon h1 {
-  font-size: 36px;
-  margin: 10px 0;
-  color: white;
+  margin-top: 1rem;
+  color: #ffffff;
+  font-size: clamp(2.3rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.06em;
 }
 
-.paraCon h4 {
-  font-size: 22px;
-  color: rgb(209, 55, 28);
-  margin: 10px 0;
+.description {
+  margin-top: 1rem;
+  color: rgba(226, 232, 240, 0.88);
+  font-size: 1.04rem;
+  line-height: 1.8;
 }
 
-.paraCon p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 10px 0;
-  color: rgb(0, 0, 156);
+.priceRow {
+  margin-top: 1.5rem;
 }
 
-.paraCon h5 {
-  font-size: 24px;
-  margin: 15px 0;
-  color: rgb(2, 225, 255);
+.priceRow h5 {
+  color: #7dd3fc;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
 }
 
-.paraCon button {
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  background: #425371;
-  color: #fff;
+.ctaButton {
+  margin-top: 1.7rem;
+  align-self: flex-start;
+  padding: 0.95rem 1.5rem;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  border-radius: 14px;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 18px 35px rgba(37, 99, 235, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 
-@media (max-width: 700px) {
+.ctaButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 38px rgba(37, 99, 235, 0.35);
+}
+
+.loadingState {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
   .container {
-    flex-direction: column;
-    width: 90%;
-    gap: 20px;
+    grid-template-columns: 1fr;
+    padding-top: 2.2rem;
   }
 
-  .imgCon img {
-    height: 300px;
+  .imgCon {
+    min-height: 400px;
   }
 
-  .paraCon h1 {
-    font-size: 28px;
+  .paraCon {
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .imgCon {
+    min-height: 320px;
+    padding: 1.25rem;
   }
 
-  .paraCon h4 {
-    font-size: 18px;
+  .ctaButton {
+    width: 100%;
+    text-align: center;
   }
 }

@@ -3,35 +3,32 @@
 }
 
 .content {
-  width: 90%;
-  max-width: 800px;
-  margin: 50px auto;
+  width: min(100%, 860px);
+  margin: clamp(2rem, 5vw, 4rem) auto;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.2rem, 3vw, 2rem);
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
   text-align: center;
 }
 
 .content h1 {
-  color: white;
-  font-size: 40px;
-  margin-bottom: 25px;
+  margin-bottom: 1.4rem;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  letter-spacing: -0.06em;
 }
 
 .content p {
-  color: #1c1c1c;
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 20px;
+  color: rgba(226, 232, 240, 0.9);
+  font-size: clamp(1.02rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
 }
 
 @media (max-width: 600px) {
   .content {
-    margin: 35px auto;
-  }
-
-  .content h1 {
-    font-size: 30px;
-  }
-
-  .content p {
-    font-size: 16px;
+    margin: 2rem 1rem;
   }
 }

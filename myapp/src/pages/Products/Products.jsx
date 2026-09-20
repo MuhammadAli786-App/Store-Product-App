@@ -30,7 +30,10 @@ function Products() {
     <div className={styles.container}>
       <Navbar search={search} setSearch={setSearch} />
 
-      <h1>Featured Product</h1>
+      <section className={styles.pageHeader}>
+        <p className={styles.eyebrow}>Shop all</p>
+        <h1>Featured Products</h1>
+      </section>
 
       {filteredProducts.length > 0 ? (
         <div className={styles.cardGrid}>
@@ -38,7 +41,9 @@ function Products() {
             const { title, price, image, id } = obj;
             return (
               <div key={id} className={styles.card}>
-                <img src={image} alt="Product" className={styles.cardImg} />
+                <div className={styles.imageWrap}>
+                  <img src={image} alt={title} className={styles.cardImg} />
+                </div>
 
                 <div className={styles.cardBody}>
                   <h2 className={styles.cardTitle}>{title}</h2>
@@ -57,7 +62,10 @@ function Products() {
         </div>
       ) : (
         <div className={styles.notFoundWrapper}>
-          <p className={styles.notFoundPara}>No product found</p>
+          <div className={styles.emptyState}>
+            <p className={styles.notFoundPara}>No product found</p>
+            <span>Try a different product name or reset your search.</span>
+          </div>
         </div>
       )}
     </div>
